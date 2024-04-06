@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".course_management.AddCourseActivity">
+
+    <TextView
+        android:id="@+id/addHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Add course"
+        android:textAllCaps="true"
+        android:textColor="@color/color3"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/addHeading"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="6dp"
+        android:src="@drawable/baseline_check_24" />
+
+    <EditText
+        android:background="@drawable/border"
+        android:fontFamily="@font/poppins"
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Enter the name"
+        android:padding="12dp"
+        android:textSize="20sp"
+        android:layout_marginTop="16dp"
+        android:maxLines="1"
+        android:layout_below="@+id/addHeading"/>
+    <EditText
+        android:background="@drawable/border"
+        android:fontFamily="@font/poppins"
+        android:id="@+id/etCredit"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Enter the credits"
+        android:inputType="number"
+        android:padding="12dp"
+        android:textSize="20sp"
+        android:layout_marginTop="16dp"
+        android:maxLines="1"
+        android:layout_below="@+id/etName"/>
+    <EditText
+        android:background="@drawable/border"
+        android:fontFamily="@font/poppins"
+        android:id="@+id/etSemester"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Enter the semester"
+        android:padding="12dp"
+        android:textSize="20sp"
+        android:layout_marginTop="16dp"
+        android:maxLines="1"
+        android:layout_below="@+id/etCredit"/>
+
+</RelativeLayout>
