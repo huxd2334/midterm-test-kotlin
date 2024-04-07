@@ -8,18 +8,35 @@
     android:layout_height="match_parent"
     tools:context=".course_management.CourseActivity">
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mtrCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        android:theme="@style/Theme.MaterialComponents.DayNight"
+        app:cardElevation="20dp"
+        app:cardUseCompatPadding="true">
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:iconifiedByDefault="false"
+            android:queryHint="Search course">
+        </SearchView>
+    </com.google.android.material.card.MaterialCardView>
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvTitle"
+        android:id="@+id/tvTitle1"
         android:text="course list"
         android:textAllCaps="true"
         android:layout_gravity="center"
         android:fontFamily="@font/poppins_bold"
         android:textColor="@color/color3"
-        android:textSize="26sp"
-        android:layout_marginTop="16dp"
-        />
+        android:textSize="26sp" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCourse"

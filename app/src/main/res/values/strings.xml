@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">22IT.EB007_Le Cam Binh</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>

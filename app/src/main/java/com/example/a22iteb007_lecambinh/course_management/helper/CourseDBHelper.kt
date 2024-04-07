@@ -1,23 +1,25 @@
-package com.example.a22iteb007_lecambinh.course_management
+package com.example.a22iteb007_lecambinh.course_management.helper
 
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
+import com.example.a22iteb007_lecambinh.course_management.model.Course
 
 class CourseDBHelper(context: Context) : android.database.sqlite.SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION ) {
 
     companion object{
-        private const val DATABASE_NAME = "course_management"
+        private const val DATABASE_NAME = "qlhocphan"
         private const val DATABASE_VERSION = 1
-        private const val TABLE_NAME = "courses"
-        private const val COLUMN_ID = "id"
-        private const val COLUMN_NAME = "name"
-        private const val COLUMN_CREDIT = "credit"
-        private const val COLUMN_SEMESTER = "semester"
+        private const val TABLE_NAME = "HocPhan"
+        private const val COLUMN_ID = "mahocphan"
+        private const val COLUMN_NAME = "tenhocphan"
+        private const val COLUMN_CREDIT = "sotinchi"
+        private const val COLUMN_SEMESTER = "hocky"
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
-        val createTableQuery = "CREATE TABLE $TABLE_NAME(" +
+        val createTableQuery =
+                "CREATE TABLE $TABLE_NAME(" +
                 "$COLUMN_ID INTEGER PRIMARY KEY," +
                 "$COLUMN_NAME TEXT," +
                 "$COLUMN_CREDIT INTEGER," +
@@ -62,6 +64,26 @@ class CourseDBHelper(context: Context) : android.database.sqlite.SQLiteOpenHelpe
         return list
     }
 
+    fun searchCourse(query:String):List<Course>{
+        val list = mutableListOf<Course>()
+        val db = readableDatabase
+        val selection = "$COLUMN_NAME like ? or $COLUMN_CREDIT like ? or $COLUMN_SEMESTER like ?"
+        val arg = arrayOf("%$query%", "%$query%", query.trim())
+        val cursor = db.query(TABLE_NAME, null, selection, arg, null, null, null)
+        while(cursor.moveToNext()){
+            val id = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID))
+            val name = cursor.getString(cursor.getColumnIndexOrThrow((COLUMN_NAME)))
+            val credit = cursor.getInt(cursor.getColumnIndexOrThrow((COLUMN_CREDIT)))
+            val semester = cursor.getString(cursor.getColumnIndexOrThrow((COLUMN_SEMESTER)))
+
+            val course = Course(id, name, credit, semester)
+            list.add(course)
+        }
+        cursor.close()
+        db.close()
+        return list
+    }
+
     fun getCourseByID(courseID:Int): Course {
         val db = readableDatabase
         val query = "Select * from $TABLE_NAME where $COLUMN_ID = $courseID"
@@ -84,17 +106,17 @@ class CourseDBHelper(context: Context) : android.database.sqlite.SQLiteOpenHelpe
             put(COLUMN_CREDIT, course.credit)
             put(COLUMN_SEMESTER, course.semester)
         }
-        val whereClause  = "$COLUMN_ID=?"
-        val whereArg = arrayOf(course.id.toString())
-        db.update(TABLE_NAME, values, whereClause, whereArg)
+        val clause  = "$COLUMN_ID=?"
+        val arg = arrayOf(course.id.toString())
+        db.update(TABLE_NAME, values, clause, arg)
         db.close()
     }
 
     fun deleteCourse(courseID:Int){
         val db = writableDatabase
-        val whereClause = "$COLUMN_ID = ?"
-        val whereArg = arrayOf(courseID.toString())
-        db.delete(TABLE_NAME, whereClause, whereArg)
+        val clause = "$COLUMN_ID = ?"
+        val arg = arrayOf(courseID.toString())
+        db.delete(TABLE_NAME, clause, arg)
         db.close()
     }
 }

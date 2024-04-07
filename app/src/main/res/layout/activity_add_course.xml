@@ -30,42 +30,116 @@
         android:layout_marginEnd="6dp"
         android:src="@drawable/baseline_check_24" />
 
-    <EditText
-        android:background="@drawable/border"
-        android:fontFamily="@font/poppins"
-        android:id="@+id/etName"
+    <TableLayout
+        android:layout_below="@+id/addHeading"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:hint="Enter the name"
-        android:padding="12dp"
-        android:textSize="20sp"
-        android:layout_marginTop="16dp"
-        android:maxLines="1"
-        android:layout_below="@+id/addHeading"/>
-    <EditText
-        android:background="@drawable/border"
-        android:fontFamily="@font/poppins"
-        android:id="@+id/etCredit"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:hint="Enter the credits"
-        android:inputType="number"
-        android:padding="12dp"
-        android:textSize="20sp"
-        android:layout_marginTop="16dp"
-        android:maxLines="1"
-        android:layout_below="@+id/etName"/>
-    <EditText
-        android:background="@drawable/border"
-        android:fontFamily="@font/poppins"
-        android:id="@+id/etSemester"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:hint="Enter the semester"
-        android:padding="12dp"
-        android:textSize="20sp"
-        android:layout_marginTop="16dp"
-        android:maxLines="1"
-        android:layout_below="@+id/etCredit"/>
+        android:layout_height="match_parent"
+        android:padding="0dp"
+        android:stretchColumns="*">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp">
+            <TextView
+                android:text="Name"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/color1"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_gravity="center_vertical"
+                android:padding="12dp"/>
+            <EditText
+                android:background="@drawable/border"
+                android:fontFamily="@font/poppins"
+                android:id="@+id/etName"
+                android:hint="Enter the name"
+                android:padding="12dp"
+                android:textSize="20sp"
+                android:maxLines="1" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp">
+            <TextView
+                android:text="Credit"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/color1"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_gravity="center_vertical"
+                android:padding="12dp"/>
+            <EditText
+                android:background="@drawable/border"
+                android:fontFamily="@font/poppins"
+                android:id="@+id/etCredit"
+                android:inputType="number"
+                android:hint="Enter the credit"
+                android:padding="12dp"
+                android:textSize="20sp"
+                android:maxLines="1" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp">
+            <TextView
+                android:text="Semester"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/color1"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_gravity="center_vertical"
+                android:padding="12dp"/>
+            <EditText
+                android:background="@drawable/border"
+                android:fontFamily="@font/poppins"
+                android:id="@+id/etSemester"
+                android:hint="Enter the semester"
+                android:padding="12dp"
+                android:textSize="20sp"
+                android:maxLines="1" />
+        </TableRow>
+
+    </TableLayout>
+
+<!--    <EditText-->
+<!--        android:background="@drawable/border"-->
+<!--        android:fontFamily="@font/poppins"-->
+<!--        android:id="@+id/etName"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:hint="Enter the name"-->
+<!--        android:padding="12dp"-->
+<!--        android:textSize="20sp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:maxLines="1"-->
+<!--        android:layout_below="@+id/addHeading"/>-->
+<!--    <EditText-->
+<!--        android:background="@drawable/border"-->
+<!--        android:fontFamily="@font/poppins"-->
+<!--        android:id="@+id/etCredit"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:hint="Enter the credits"-->
+<!--        android:inputType="number"-->
+<!--        android:padding="12dp"-->
+<!--        android:textSize="20sp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:maxLines="1"-->
+<!--        android:layout_below="@+id/etName"/>-->
+<!--    <EditText-->
+<!--        android:background="@drawable/border"-->
+<!--        android:fontFamily="@font/poppins"-->
+<!--        android:id="@+id/etSemester"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:hint="Enter the semester"-->
+<!--        android:padding="12dp"-->
+<!--        android:textSize="20sp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:maxLines="1"-->
+<!--        android:layout_below="@+id/etCredit"/>-->
 
 </RelativeLayout>

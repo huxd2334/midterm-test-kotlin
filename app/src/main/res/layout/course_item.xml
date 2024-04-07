@@ -64,6 +64,22 @@
                 android:stretchColumns="*">
                 <TableRow>
                     <TextView
+                        android:text="ID"
+                        android:fontFamily="@font/poppins"
+                        android:textColor="@color/color1"
+                        android:textStyle="bold"
+                        android:textSize="15sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvCourseID"
+                        android:fontFamily="@font/poppins"
+                        android:textColor="@color/color1"
+                        android:text="Course's ID"
+                        android:textSize="15sp" />
+                </TableRow>
+                <TableRow>
+                    <TextView
                         android:text="Credit"
                         android:fontFamily="@font/poppins"
                         android:textColor="@color/color1"

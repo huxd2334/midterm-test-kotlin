@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".course_management.UpdateCourseActivity">
+    tools:context=".course_management.AddCourseActivity">
 
     <TextView
         android:id="@+id/addHeading"
@@ -15,7 +15,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="10dp"
         android:fontFamily="@font/poppins_bold"
-        android:text="Update course"
+        android:text="update course"
         android:textAllCaps="true"
         android:textColor="@color/color3"
         android:textSize="24sp"
@@ -30,42 +30,171 @@
         android:layout_marginEnd="6dp"
         android:src="@drawable/baseline_check_24" />
 
-    <EditText
-        android:background="@drawable/border"
-        android:fontFamily="@font/poppins"
-        android:id="@+id/etNameUpdate"
+    <TableLayout
+        android:layout_below="@+id/addHeading"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:hint="Enter the name"
-        android:padding="12dp"
-        android:textSize="20sp"
-        android:layout_marginTop="16dp"
-        android:maxLines="1"
-        android:layout_below="@+id/addHeading"/>
-    <EditText
-        android:background="@drawable/border"
-        android:fontFamily="@font/poppins"
-        android:id="@+id/etCreditUpdate"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:hint="Enter the credits"
-        android:inputType="number"
-        android:padding="12dp"
-        android:textSize="20sp"
-        android:layout_marginTop="16dp"
-        android:maxLines="1"
-        android:layout_below="@+id/etNameUpdate"/>
-    <EditText
-        android:background="@drawable/border"
-        android:fontFamily="@font/poppins"
-        android:id="@+id/etSemesterUpdate"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:hint="Enter the semester"
-        android:padding="12dp"
-        android:textSize="20sp"
-        android:layout_marginTop="16dp"
-        android:maxLines="1"
-        android:layout_below="@+id/etCreditUpdate"/>
+        android:layout_height="match_parent"
+        android:padding="0dp"
+        android:stretchColumns="*">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp">
+            <TextView
+                android:text="ID"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/color1"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_gravity="center_vertical"
+                android:padding="12dp"/>
+            <EditText
+                android:background="@drawable/border"
+                android:fontFamily="@font/poppins"
+                android:id="@+id/etID"
+                android:hint="ID here"
+                android:inputType="none"
+                android:padding="12dp"
+                android:textSize="20sp"
+                android:maxLines="1" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp">
+            <TextView
+                android:text="Name"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/color1"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_gravity="center_vertical"
+                android:padding="12dp"/>
+            <EditText
+                android:background="@drawable/border"
+                android:fontFamily="@font/poppins"
+                android:id="@+id/etNameUpdate"
+                android:hint="Enter the name"
+                android:padding="12dp"
+                android:textSize="20sp"
+                android:maxLines="1" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp">
+            <TextView
+                android:text="Credit"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/color1"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_gravity="center_vertical"
+                android:padding="12dp"/>
+            <EditText
+                android:background="@drawable/border"
+                android:fontFamily="@font/poppins"
+                android:id="@+id/etCreditUpdate"
+                android:hint="Enter the credit"
+                android:inputType="number"
+                android:padding="12dp"
+                android:textSize="20sp"
+                android:maxLines="1" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp">
+            <TextView
+                android:text="Semester"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/color1"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_gravity="center_vertical"
+                android:padding="12dp"/>
+            <EditText
+                android:background="@drawable/border"
+                android:fontFamily="@font/poppins"
+                android:id="@+id/etSemesterUpdate"
+                android:hint="Enter the semester"
+                android:padding="12dp"
+                android:textSize="20sp"
+                android:maxLines="1" />
+        </TableRow>
+
+    </TableLayout>
 
 </RelativeLayout>
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/main"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:padding="16dp"-->
+<!--    tools:context=".course_management.UpdateCourseActivity">-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/addHeading"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:fontFamily="@font/poppins_bold"-->
+<!--        android:text="Update course"-->
+<!--        android:textAllCaps="true"-->
+<!--        android:textColor="@color/color3"-->
+<!--        android:textSize="24sp"-->
+<!--        android:textStyle="bold" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/btnSaveUpdate"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignTop="@+id/addHeading"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginEnd="6dp"-->
+<!--        android:src="@drawable/baseline_check_24" />-->
+
+<!--    <EditText-->
+<!--        android:background="@drawable/border"-->
+<!--        android:fontFamily="@font/poppins"-->
+<!--        android:id="@+id/etNameUpdate"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:hint="Enter the name"-->
+<!--        android:padding="12dp"-->
+<!--        android:textSize="20sp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:maxLines="1"-->
+<!--        android:layout_below="@+id/addHeading"/>-->
+<!--    <EditText-->
+<!--        android:background="@drawable/border"-->
+<!--        android:fontFamily="@font/poppins"-->
+<!--        android:id="@+id/etCreditUpdate"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:hint="Enter the credits"-->
+<!--        android:inputType="number"-->
+<!--        android:padding="12dp"-->
+<!--        android:textSize="20sp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:maxLines="1"-->
+<!--        android:layout_below="@+id/etNameUpdate"/>-->
+<!--    <EditText-->
+<!--        android:background="@drawable/border"-->
+<!--        android:fontFamily="@font/poppins"-->
+<!--        android:id="@+id/etSemesterUpdate"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:hint="Enter the semester"-->
+<!--        android:padding="12dp"-->
+<!--        android:textSize="20sp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:maxLines="1"-->
+<!--        android:layout_below="@+id/etCreditUpdate"/>-->
+
+<!--</RelativeLayout>-->

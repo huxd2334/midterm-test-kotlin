@@ -1,4 +1,4 @@
-package com.example.a22iteb007_lecambinh.course_management
+package com.example.a22iteb007_lecambinh.course_management.adapter
 
 import android.app.AlertDialog
 import android.content.Context
@@ -12,12 +12,17 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.a22iteb007_lecambinh.R
+import com.example.a22iteb007_lecambinh.course_management.UpdateCourseActivity
+import com.example.a22iteb007_lecambinh.course_management.helper.CourseDBHelper
+import com.example.a22iteb007_lecambinh.course_management.model.Course
 
 class CourseAdapter (private var courses:List<Course>, context: Context):RecyclerView.Adapter<CourseAdapter.ViewHolder>(){
 
     private val db: CourseDBHelper = CourseDBHelper(context)
 
+    //ViewHolder class represent the item view
     class ViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
+        val tvID:TextView = itemView.findViewById(R.id.tvCourseID)
         val tvName:TextView = itemView.findViewById(R.id.tvCourseName)
         val tvCredit:TextView = itemView.findViewById(R.id.tvCourseCredit)
         val tvSemester:TextView = itemView.findViewById(R.id.tvCourseSemester)
@@ -34,6 +39,7 @@ class CourseAdapter (private var courses:List<Course>, context: Context):Recycle
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val course = courses[position]
         holder.tvName.text = course.name
+        holder.tvID.text = course.id.toString()
         holder.tvCredit.text = course.credit.toString()
         holder.tvSemester.text = course.semester
 
@@ -48,7 +54,7 @@ class CourseAdapter (private var courses:List<Course>, context: Context):Recycle
         // button Delete action
         holder.btnDelete.setOnClickListener {
             val alertDialog = AlertDialog.Builder(holder.itemView.context)
-            alertDialog.setTitle("Delete ${course.name.toUpperCase()}?")
+            alertDialog.setTitle("Delete ${course.name.toUpperCase()} course?")
             alertDialog.setMessage("Deleting will remove all this course's data")
             alertDialog.setPositiveButton("Delete", DialogInterface.OnClickListener{ dialog, which ->
                 db.deleteCourse(course.id)
@@ -66,6 +72,7 @@ class CourseAdapter (private var courses:List<Course>, context: Context):Recycle
         }
     }
 
+    // function to F5 data in adapter
     fun refreshData(newCourse: List<Course>){
         courses = newCourse
         notifyDataSetChanged()
